@@ -2,10 +2,22 @@ using UnityEngine;
 
 public class ButtonAction : MonoBehaviour
 {
+
+    SpriteRenderer spriteRenderer;
+
+    void Awake() // 가장 먼저 실행되는 함수.
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+    void OnEnable() // 활성화될때 실행되는 함수
+    {
+        transform.position = new Vector3(0, 0, 0);
+    }
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //spriteRenderer.color = Color.black;
     }
 
     // Update is called once per frame
