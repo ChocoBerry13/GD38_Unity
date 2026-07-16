@@ -2,7 +2,7 @@ using System;
 using Unity.Hierarchy;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class CharacterMove_Player : MonoBehaviour
 {
     float spawnTimer = 0f;
     
