@@ -65,6 +65,7 @@ public class CharacterMove_Monster : MonoBehaviour
         Vector3 lookDirection = new Vector3(direction.x,0,0).normalized; // lookDirection에 정규화된 방향 벡터를 넣었습니다.
 
         spriteRenderer.flipX = lookDirection.x < 0; //이걸로 반전여부가 정해짐 
+        //flipX와 flipY를 모두 활용할수있음매 
 
         // lookDirection 방향으로 moveSpeed 속도로 이동한다. (좌우로만. 사이드뷰 한계 !) 
         transform.position += lookDirection * moveSpeed * Time.deltaTime;
