@@ -42,7 +42,7 @@
                 {
                     "name": "down",
                     "id": "35bd79e0-a478-4b7d-a727-a8371c9efeca",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": ";All Keyboard + Mouse",
@@ -53,7 +53,7 @@
                 {
                     "name": "left",
                     "id": "1733965f-3c00-49a9-b01b-2ba6fcd5287c",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": ";All Keyboard + Mouse",
