@@ -329,8 +329,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterMove_Monster
   target: {fileID: 217243631}
-  moveSpeed: 2
+  moveSpeed: 1
   fllowDistance: 0.2
+  spriteRenderer: {fileID: 838387483}
+  isSide: 0
 --- !u!1 &1309597600
 GameObject:
   m_ObjectHideFlags: 0
