@@ -7,11 +7,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] float moveSpeed = 5f;
     Vector2 moveInput;//이동방향을 담음
     SpriteRenderer spriteRenderer;
+
+    Rigidbody2D rigid;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
         //inspector창 말고 코드안에서 this. 겟컴포넌트해옴
         spriteRenderer = this.GetComponent<SpriteRenderer>();
+        rigid = GetComponent<Rigidbody2D>();
     }
     void Start()
     {
@@ -34,11 +38,24 @@ public class PlayerControl : MonoBehaviour
             spriteRenderer.flipX = moveDirection.x < 0;
         }
     }
+    void FixedUpdate()
+    {
+        rigid.linearVelocity = moveInput * moveSpeed; // 이동은 Rigidbody2D의 속도로 처리합니다.
+    }
 
+    void OnCollisionEnter2D(Collision2D collision) // Collision
+    {
+        Debug.Log($"{collision.gameObject.name}과 충돌했습니다.");
+    }
+
+    void OnTriggerEnter2D(Collider2D other) // Trigger
+    {
+        Debug.Log($"{other.gameObject.name}의 범위에 들어왔습니다.");
+    }
     void OnMove(InputValue _value)
     {
         //// 매개변수로 받아온 _value 의 Vector2를 moveInput에 넣음
         moveInput = _value.Get<Vector2>();
-        UnityEngine.Debug.Log(moveInput);
+       // UnityEngine.Debug.Log(moveInput);
     }
 }
