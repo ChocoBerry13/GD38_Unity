@@ -45,12 +45,19 @@ public class PlayerControl : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) // Collision
     {
-        Debug.Log($"{collision.gameObject.name}과 충돌했습니다.");
+      //  Debug.Log($"{collision.gameObject.name}과 충돌했습니다.");
     }
 
     void OnTriggerEnter2D(Collider2D other) // Trigger
     {
-        Debug.Log($"{other.gameObject.name}의 범위에 들어왔습니다.");
+        if (other.CompareTag("Red"))
+        {
+            Debug.Log($"{other.gameObject.name}, 빨간 박스 트리거에 닿았습니다.");
+        }
+       else if (other.CompareTag("Blue"))
+        {
+            Debug.Log($"{other.gameObject.name}, 파란 박스 트리거에 닿았습니다.");
+        }
     }
     void OnMove(InputValue _value)
     {
