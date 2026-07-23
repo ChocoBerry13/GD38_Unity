@@ -1,9 +1,14 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.GraphicsBuffer;
 
 public class PlayerControl : MonoBehaviour
 {
+
+    List<IInteractable> interactableObjects = new List<IInteractable>();
+
     [SerializeField] float moveSpeed = 5f;
     Vector2 moveInput;//이동방향을 담음
     SpriteRenderer spriteRenderer;
@@ -50,14 +55,21 @@ public class PlayerControl : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other) // Trigger
     {
-        if (other.CompareTag("Red"))
-        {
-            Debug.Log($"{other.gameObject.name}, 빨간 박스 트리거에 닿았습니다.");
-        }
-       else if (other.CompareTag("Blue"))
-        {
-            Debug.Log($"{other.gameObject.name}, 파란 박스 트리거에 닿았습니다.");
-        }
+       // if (other.CompareTag("Red"))
+       // {
+       //     Debug.Log($"{other.gameObject.name}, 빨간 박스 트리거에 닿았습니다.");
+       // }
+       //else if (other.CompareTag("Blue"))
+       // {
+       //     Debug.Log($"{other.gameObject.name}, 파란 박스 트리거에 닿았습니다.");
+       // }
+
+
+        interactableObjects.Add(other.GetComponent<IInteractable>());
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+     //   interactableObjects
     }
     void OnMove(InputValue _value)
     {
