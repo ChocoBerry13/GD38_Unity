@@ -14,8 +14,8 @@ TagManager:
   - Player
   - Water
   - UI
+  - Ground
   - Background
-  - 
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: 2F
     uniqueID: 1789532003
+    locked: 0
+  - name: groundLayer
+    uniqueID: 425420243
     locked: 0
   m_RenderingLayers:
   - Default
